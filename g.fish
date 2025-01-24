@@ -56,7 +56,7 @@ function $cmd --description "Better Git"
                 echo "Generating commit message"
                 git add -A
                 git diff --staged > $tmp/diff
-                set message (aichat -f $tmp/diff "Respond with a one-line quick message describing the above changes. No fluff, only the description.")
+                set message (aichat -f $tmp/diff "Respond with a one-line quick message describing the above changes. No fluff, only the description. Do not capitalize the first letter, and do not end in a period")
                 git commit -m $message
                 return 0
             end
