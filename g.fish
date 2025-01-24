@@ -1,7 +1,5 @@
 #!/usr/bin/env fish
 
-# hello test comment
-
 # Define command name once
 set -l cmd g
 
