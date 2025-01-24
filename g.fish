@@ -84,7 +84,6 @@ function $cmd --description "Better Git"
             git status
 
         case '*'
-            echo "Error: Unknown command '$subcmd'"
-            return 1
+            git $subcmd
     end
 end
