@@ -54,13 +54,14 @@ function $cmd --description "Better Git"
         case c
             if test (count $argv) -eq 0
                 echo "Generating commit message"
-                git diff > $tmp/diff
-                set message (aichat -f $tmp/diff "Respond with a one-line quick message describing the above changes. No fluff, only the description.")
                 git add -A
+                git diff --staged > $tmp/diff
+                set message (aichat -f $tmp/diff "Respond with a one-line quick message describing the above changes. No fluff, only the description.")
                 git commit -m $message
                 return 0
             end
 
+            git add -A
             git commit -m $argv
 
         case co
