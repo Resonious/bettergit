@@ -26,7 +26,7 @@ function $cmd --description "Better Git"
         echo "Usage: $cmd [options] command [args]"
         echo
         echo "Commands:"
-        echo "  c MESSAGE         Commit with message"
+        echo "  c [MESSAGE]       Commit, message optional"
         echo "  co BRANCH         Checkout"
         echo "  new BRANCH        Checkout new branch"
         echo "  s                 Status"
