@@ -37,7 +37,7 @@ function $cmd --description "Better Git"
         echo
         echo "Options:"
         echo "  -h, --help        Show this help message"
-        echo "  -p, --push        Push after commit"
+        echo "  -p, --push        Push after commit (only for c)"
         return 0
     end
 
