@@ -47,16 +47,15 @@ function $cmd --description "Better Git"
     set -e argv[1]
 
     # Create data directory if it doesn't exist
-    set -l tmp /tmp/.bettergit
-    mkdir -p $tmp
+    set -l tmp (mktemp)
 
     switch $subcmd
         case c
             if test (count $argv) -eq 0
                 echo "Generating commit message"
                 git add -A
-                git diff --staged > $tmp/diff
-                set message (aichat -f $tmp/diff "Respond with a one-line quick message describing the above changes. No fluff, only the description. Do not capitalize the first letter, and do not end in a period")
+                git diff --staged > $tmp
+                set message (aichat -f $tmp "Respond with a one-line quick message describing the above changes. No fluff, only the description. Do not capitalize the first letter, and do not end in a period")
                 git commit -m $message
                 return 0
             end
